@@ -3,10 +3,9 @@ var express = require('express');
 var getJSON = require('get-json');
 
 var bot = linebot({
-  channelId: 1499626788,
-  channelSecret: 9e95d637a0fb0ba08eebd84274a2da18,
-  channelAccessToken: yWRRwIbq7uyu0MSrYBCRAvrTSK7bf9s76GSLoOGGpng+eaDO92YK9AWjj7159ASe3oPz7zkui9PQrOqfAo7MHhYx94dREPG9QIlVwSHfa3I1rUsqhyOO9mQGdj9FU2FA8uFBFJy0Kv24hWilGS0xwwdB04t89/1O/w1cDnyilFU=
-});
+  channelId:1499626788,
+  channelSecret:9e95d637a0fb0ba08eebd84274a2da18,
+  channelAccessToken:yWRRwIbq7uyu0MSrYBCRAvrTSK7bf9s76GSLoOGGpng+eaDO92YK9AWjj7159ASe3oPz7zkui9PQrOqfAo7MHhYx94dREPG9QIlVwSHfa3I1rUsqhyOO9mQGdj9FU2FA8uFBFJy0Kv24hWilGS0xwwdB04t89/1O/w1cDnyilFU=});
 var timer;
 var pm = [];
 _getJSON();
