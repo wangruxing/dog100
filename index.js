@@ -5,9 +5,10 @@ var linebot = require('linebot');
 var express = require('express');
 
 var bot = linebot({
-  channelId:1499626788,
-  channelSecret:9e95d637a0fb0ba08eebd84274a2da18,
-  channelAccessToken:B+T4+TveEEelL8j1Mg6o9xK76XmCa2XvGHcTDNsooM4L3kJI7YP3sqsOqa0xfAA+3oPz7zkui9PQrOqfAo7MHhYx94dREPG9QIlVwSHfa3JWTIubS00rEkS+uUeUo64aEOz5xHGoY3TFirjrgPqQMAdB04t89/1O/w1cDnyilFU=;
+  channelId:'1499626788',
+  channelSecret:'9e95d637a0fb0ba08eebd84274a2da18',
+  channelAccessToken:'B+T4+TveEEelL8j1Mg6o9xK76XmCa2XvGHcTDNsooM4L3kJI7YP3sqsOqa0xfAA+3oPz7zkui9PQrOqfAo7MHhYx94dREPG9QIlVwSHfa3JWTIubS00rEkS+uUeUo64aEOz5xHGoY3TFirjrgPqQMAdB04t89/1O/w1cDnyilFU='});
+
 var timer;
 var pm = [];
 _getJSON();
@@ -17,7 +18,7 @@ const app = express();
 const linebotParser = bot.parser();
 app.post('/', linebotParser);
 
-
+//因為 express 預設走 port 3000，而 heroku 上預設卻不是，要透過下列程式轉換
 var server = app.listen(process.env.PORT || 8080, function() {
   var port = server.address().port;
   console.log("App now running on port", port);
@@ -62,5 +63,5 @@ function _getJSON() {
       pm[i][2] = e.PM10 * 1;
     });
   });
-  timer = setInterval(_getJSON, 1800000);
+  timer = setInterval(_getJSON, 1800000); //每半小時抓取一次新資料
 }
